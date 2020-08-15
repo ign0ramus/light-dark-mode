@@ -16,7 +16,7 @@ function imageMode(color) {
 }
 
 function toggleDarkLightMode(mode) {
-  const isLight = mode === 'light';
+	const isLight = mode === 'light';
 
 	nav.style.backgroundColor = isLight
 		? 'rgb(255 255 255 / 50%)'
@@ -78,5 +78,12 @@ function menuToggleClickHandler() {
 	sideDrawer.classList.add('open');
 }
 
+function sideDrawerClickHandler(e) {
+	if (e.target.tagName === 'A') {
+		backdropClickHandler();
+	}
+}
+
 backdrop.addEventListener('click', backdropClickHandler);
 menuToggle.addEventListener('click', menuToggleClickHandler);
+sideDrawer.addEventListener('click', sideDrawerClickHandler);
